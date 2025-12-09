@@ -91,23 +91,4 @@ VITE_API_URL=http://localhost:8000
 - ✅ Health checks
 - ✅ Error handling
 
-## 🚢 Deployment
-
-### Quick Deploy (5 minutes)
-See [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) for step-by-step instructions.
-
-### Detailed Guide
-See [DEPLOY_VERCEL.md](./DEPLOY_VERCEL.md) for complete deployment guide with domain setup.
-
-**Recommended Setup:**
-- **Frontend**: Vercel (Free) ✅
-- **Backend**: Railway or Render (Free tier) ✅
-- **Domain**: Your custom domain ✅
-
-### Other Options
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for alternative deployment options.
-
-## 📄 License
-
-ISC
 
