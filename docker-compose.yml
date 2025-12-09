@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: wrapper-detector-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - AI_API_KEY=${AI_API_KEY}
+      - PORT=8000
+    volumes:
+      # Mount prompt.txt for easy updates without rebuild
+      - ./back/prompt.txt:/app/prompt.txt:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:8000/', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - wrapper-detector-network
+
+  frontend:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL:-http://localhost:8000}
+    container_name: wrapper-detector-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - wrapper-detector-network
+
+networks:
+  wrapper-detector-network:
+    driver: bridge
+

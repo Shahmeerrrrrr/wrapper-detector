@@ -1,0 +1,22 @@
+{
+  "name": "wrapper-detector-backend",
+  "version": "1.0.0",
+  "description": "Backend API for WrapperDetector",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "groq-sdk": "^0.37.0"
+  }
+}
