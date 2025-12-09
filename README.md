@@ -93,19 +93,23 @@ VITE_API_URL=http://localhost:8000
 
 ## 🚢 Deployment
 
-### Quick Deploy (5 minutes)
-See [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) for step-by-step instructions.
+### 🚀 Deploy to Vercel (Recommended)
+**Step-by-step guide**: See [DEPLOY_VERCEL_STEP_BY_STEP.md](./DEPLOY_VERCEL_STEP_BY_STEP.md)
 
-### Detailed Guide
-See [DEPLOY_VERCEL.md](./DEPLOY_VERCEL.md) for complete deployment guide with domain setup.
+**Quick Summary:**
+1. Deploy backend to Railway (5 min)
+2. Deploy frontend to Vercel (5 min)
+3. Add your custom domain (optional)
+
+### Other Guides
+- [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) - Quick reference
+- [DEPLOY_VERCEL.md](./DEPLOY_VERCEL.md) - Detailed guide
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Alternative options
 
 **Recommended Setup:**
 - **Frontend**: Vercel (Free) ✅
-- **Backend**: Railway or Render (Free tier) ✅
+- **Backend**: Railway (Free tier) ✅
 - **Domain**: Your custom domain ✅
-
-### Other Options
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for alternative deployment options.
 
 ## 📄 License
 
